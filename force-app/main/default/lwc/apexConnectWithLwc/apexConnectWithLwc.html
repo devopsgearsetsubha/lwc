@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Apex Connected with LWC">  
+        <lightning-combobox
+                name="rating"
+                label="Rating"
+                value={ratingValue}
+                placeholder="Select Rating"
+                options={options}
+                onchange={handleChange} >
+        </lightning-combobox>   
+        <div class="slds-var-m-around">
+            <template if:true={accountList}>
+                <template for:each={accountList} for:item="account">
+                    <div class="slds-box slds-var-m-medium" key={account.Id}>
+                        <p><!--separate para we need to give key in div as wrapper-->
+                            Name: {account.Name}
+                        </p>
+                        <p> 
+                            Industry: {account.Industry}
+                        </p>
+                        <p>
+                            Rating: {account.Rating}
+                        </p>  
+                    </div> 
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

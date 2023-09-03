@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Data Binding Demo"> 
+        <div class={customStyle}>
+            Welcome Mr {person.name}<br/>
+            {person.Age}<br/>
+            {person.Position}<br/>
+            {person.Address.city}<br/>
+            {person.Address.Zip}<br/>
+            {fruit}<br/>
+            {discount}
+        </div>
+        <lightning-input name="txtFirstName" value={name} label="Enter the Name" onchange={handleChange}></lightning-input>
+        <lightning-button label="Click" onclick={handleClick}></lightning-button>
+        FirstName: {name}
+        <c-demo-class></c-demo-class>
+    </lightning-card>
+        
+</template>

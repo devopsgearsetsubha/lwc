@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="getPicklistValues Demo">
+        <template if:true={ABCDOptions}>
+            <lightning-combobox
+                name="ABCD"
+                label="ABCD"
+                value={valueABCD}
+                placeholder="Select ABCD"
+                options={ABCDOptions}
+                onchange={handleChangeABCD} ></lightning-combobox>
+            <p>Selected value is: {valueABCD}</p>
+        </template>
+        <template if:true={IndustryOptions}>
+            <lightning-combobox
+                name="Industry"
+                label="Industry"
+                value={valueIndustry}
+                placeholder="Select Industry"
+                options={IndustryOptions}
+                onchange={handleChangeIndustry} ></lightning-combobox>
+            <p>Selected value is: {valueIndustry}</p>
+        </template>
+    </lightning-card>
+</template>

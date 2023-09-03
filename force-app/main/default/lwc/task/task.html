@@ -1,0 +1,25 @@
+<template>
+    <lightning-card>
+        <div class="component-wrapper">
+            <template for:each={todos} for:item="todo">
+                <div key={todo.id}><!--Key should be unique.We used Employee name as key here-->
+                    <div>
+                        <div class="slds-card slds-card_boundary custom-card">
+                          <div class="slds-p-around_medium">{todo.task}</div>
+                          <lightning-button label="Del" variant="brand" onclick={handleClickDel} data-taskid={todo.id} style="margin-left: 10px;"></lightning-button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col">
+                    <!--To clear the input box binded with variable and empty the variable after add click-->
+                    <lightning-input name="task" label="" value={inputTask} placeholder="Enter Task" onchange={handleChange}></lightning-input>
+                </div>
+                <div class="slds-col slds-align-bottom slds-col_bump-right">
+                    <lightning-button label="Add" variant="brand" onclick={handleClick} style="margin-left: 10px;"></lightning-button>
+                </div>
+            </div>
+        </div>  
+    </lightning-card>
+</template>

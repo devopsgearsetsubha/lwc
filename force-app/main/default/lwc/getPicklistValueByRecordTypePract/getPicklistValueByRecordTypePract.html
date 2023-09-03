@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Demo Record Type">
+        <template if:true={recordTypes}>
+            <lightning-combobox
+                name="Record Type"
+                label="Record Type"
+                value={valueRecordType}
+                placeholder="Select Record Type"
+                options={recordTypeOptions}
+                onchange={handleChangeRecordType} ></lightning-combobox>
+            <p>Selected value is: {valueRecordType}</p>
+        </template>
+        <template if:true={IndustryOptions}>
+            <lightning-combobox
+                name="Industry"
+                label="Industry"
+                value={valueIndustry}
+                placeholder="Select Industry"
+                options={IndustryOptions}
+                onchange={handleChangeIndustry} ></lightning-combobox>
+            <p>Selected value is: {valueIndustry}</p>
+        </template>
+    </lightning-card>
+</template>

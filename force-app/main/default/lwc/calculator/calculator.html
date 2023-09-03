@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+        {Error}
+        <lightning-input name="txtInput1" value={Input1} label="Input#1" onchange={handleChangeInput}></lightning-input>
+        <lightning-input name="txtInput2" value={Input2} label="Input#2" onchange={handleChangeInput}></lightning-input>
+        <lightning-button name="Add" label="Add" onclick={handleOperationClick}></lightning-button>
+        <lightning-button name="Sub" label="Subtract" onclick={handleOperationClick}></lightning-button>
+        <lightning-button name="Mul" label="Multiply" onclick={handleOperationClick}></lightning-button>
+        <lightning-button name="Div" label="Divide" onclick={handleOperationClick}></lightning-button><br/>
+        Answer: {Result}
+    </lightning-card>
+</template>

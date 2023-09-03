@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+        <template iterator:person={persons}>
+            <div key={person.value.name}>
+                <template if:true={person.first}>
+                    <b>Person List</b>
+                </template>
+                <div>
+                    {person.value.name}
+                    {person.value.salary}
+                </div>
+                <template if:true={person.last}>
+                    <b>End of the List</b>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>

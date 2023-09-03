@@ -1,0 +1,13 @@
+<template>
+    <lightning-card>
+        <lightning-input name="proStock" label="Product Stock" onchange={handleChange}></lightning-input>
+        <template if:true={isStock}>
+            Product Name: {product.name}<br/>
+            Product Price: {product.price}<br/>
+            Product Stock: {product.stock}
+        </template>
+        <template if:false={isStock}>
+            No Stocks Available
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Query Slector Use Cases">
+        <template for:each={employees} for:item="employee">
+            <!--to display emplyee id name we will use div-->
+            <div key={employee.id}><!--if you put div here you need to put key-->
+                <b>ID: {employee.id} Name : {employee.name}</b>
+                <!--scenerio we need to check for more than one data we are going for data attribute-->
+                <lightning-input data-empno={employee.id} label="Salary" value={employee.salary} ></lightning-input>
+                <lightning-button data-empno={employee.id} data-empname={employee.name} label="Select" variant="brand" onclick={handleSelect}></lightning-button>
+                <lightning-button data-empno={employee.id} label="Clear" variant="brand" onclick={handleClear}></lightning-button>
+            </div>
+            <!--next we need a input box to bind the salary and display in screen-->
+        </template>
+        <!--This is outside template.It should be inside the card-->
+        <!--To attach the button to top right-->
+        <div slot="actions">
+            <lightning-button label="Clear First" variant="brand" onclick={handleClearFirst}></lightning-button>
+            <lightning-button label="ClearAll" variant="brand" onclick={handleClearAll}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

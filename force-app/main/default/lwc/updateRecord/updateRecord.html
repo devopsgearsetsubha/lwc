@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="UpdateRecord demo">
+        <lightning-input name="Id" label="Account Id" onchange={handleChange} data-id="AccountId"></lightning-input>
+        <lightning-input name="Name" label="Account Name" onchange={handleChange} data-name="AccountName"></lightning-input>
+        <template if:true={industryOptions}>
+            <lightning-combobox
+                name="Industry"
+                label="Industry"
+                value={industryvalue}
+                placeholder="Select Industry"
+                options={industryOptions}
+                onchange={handleChangeIndustry} ></lightning-combobox>
+            <p>Selected value is: {industryvalue}</p>
+        </template>
+        <lightning-input name="AnnualRevenue" label="Annual Revenue" onchange={handleChange} data-revenue="AccountRevenue"></lightning-input>
+        <lightning-button label="Update" onclick={handleClick} variant="brand"></lightning-button>
+        <lightning-button label="Clear" onclick={handleClear} variant="brand"></lightning-button>
+    </lightning-card>
+</template>

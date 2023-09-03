@@ -1,0 +1,21 @@
+<template>
+    <lightning-card >
+        <lightning-button label="Load Employee Data" variant="brand" onclick={handleClickLoad}></lightning-button>
+            <div class="slds-grid slds-wrap">
+                <template for:each={employees} for:item="emp">
+                    <div key={emp.id} class="slds-col slds-size_6-of-12">
+                        <div class="slds-col slds-size_6-of-12">
+                            {emp.name}<br/>
+                            {emp.email}
+                        </div>
+                    </div>    
+                </template>
+                <div class="slds-col slds-size_6-of-12">
+                    <lightning-input value={empname} label="Name" onchange={handleChange}></lightning-input>
+                </div>
+                <div class="slds-col slds-size_6-of-12 slds-align-bottom">
+                    <lightning-button label="Search" variant="brand" onclick={handleClickSearch}></lightning-button>
+                </div>   
+            </div>
+    </lightning-card>
+</template>

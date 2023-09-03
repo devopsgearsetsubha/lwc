@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <template for:each={fruits} for:item="fruit">
+            <div key={fruit}><!--Key should be unique-->
+                {fruit}
+            </div>
+        </template>
+        <template for:each={employees} for:item="emp">
+            <div key={emp.name} class="slds-border_top"><!--Key should be unique.We used Employee name as key here-->
+                {emp.name}
+                {emp.city}
+            </div>
+        </template>
+    </lightning-card>       
+</template>
