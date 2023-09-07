@@ -4,7 +4,7 @@ public class accountControllerVS {
    {
     return [select Id,Name,Industry,Rating from Account];
    }
-   // get data based on rating crteria
+   // get data based on rating crterias
    // @AuraEnabled is not supported with function overloading
    // strRating 
    @AuraEnabled(cacheable=true)
